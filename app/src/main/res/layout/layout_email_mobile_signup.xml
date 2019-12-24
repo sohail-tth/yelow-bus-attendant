@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/splash_bg_white">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="@dimen/_4sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:src="@drawable/buildings"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up_with_email_mobile_msg"
+                    android:textSize="@dimen/_24sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_25sdp"
+                    android:paddingLeft="@dimen/_25sdp"
+                    android:paddingBottom="@dimen/_4sdp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/our_exec_get_in_touch_msg"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/img"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_transparent_grey_border"
+                    android:padding="@dimen/_6sdp"
+                    android:hint="@string/email_id"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textSize="@dimen/_25sdp"
+                    android:textColor="@color/black"
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/sf_medium"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_transparent_grey_border"
+                    android:padding="@dimen/_6sdp"
+                    android:hint="@string/city"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_25sdp"
+                    android:maxLength="20"
+                    android:fontFamily="@font/sf_medium"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_transparent_grey_border"
+                    android:padding="@dimen/_6sdp"
+                    android:inputType="phone"
+                    android:hint="@string/mobile_number"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textSize="@dimen/_25sdp"
+                    android:maxLength="10"
+                    android:fontFamily="@font/sf_medium"/>
+
+                <TextView
+                    android:id="@+id/tvSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_dark_blue"
+                    android:text="@string/submit"
+                    android:textSize="@dimen/_20sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

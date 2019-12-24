@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Yelow Bus - Attendant</string>
+    <string name="proceed">Proceed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_tab_to_continue">Please select one of the following tabs to continue</string>
+    <string name="drive_with_yelow">Drive with Yelow</string>
+    <string name="lease_a_vehicle">Lease a Vehicle</string>
+    <string name="attach_a_fleet">Attach a Fleet</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_with_email_mobile_msg"><b>Sign up </b>with email id,city and phone number.</string>
+    <string name="our_exec_get_in_touch_msg">(Our Executive will soon get in touch with you please refer the next to see the documents needed)</string>
+    <string name="email_id">Email Id</string>
+    <string name="city">City</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="submit">Submit</string>
+    <string name="verify_otp_signup_msg"><b>Verify</b> the OTP Sent to your email Id And phone number.</string>
+    <string name="otp">OTP</string>
+    <string name="driver_and_attendant_info">Driver\'s and Attendant\'s Info</string>
+    <string name="fleet_owner_info">Fleet Owner\'s Info</string>
+    <string name="bus_and_driver_info">Bus and Driver Info</string>
+    <string name="terms_and_condtions"><![CDATA[Terms & Conditions]]></string>
+    <string name="accept_terms_cond"><![CDATA[I accept the terms & conditions]]></string>
+    <string name="owners_email_id">Owner\'s Email Id</string>
+    <string name="request_holiday">Request Holiday</string>
+    <string name="calendar">Calendar</string>
+    <string name="notifications">Notifications</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="refer_earn"><![CDATA[Refer & Earn]]></string>
+    <string name="route_maps">Route Maps</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="logout">Logout</string>
+    <string name="sos">SOS</string>
+    <string name="missed_pickups">Missed Pickups</string>
+    <string name="feedback">Feedback</string>
+    <string name="call">Call</string>
+    <string name="manual_scan">Manual Scan</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+
+</resources>

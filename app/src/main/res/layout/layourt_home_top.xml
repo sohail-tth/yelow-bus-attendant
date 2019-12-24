@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutTop"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragment.MainFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@color/yellow">
+        <TextView
+            android:id="@+id/tvAttendantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Attendant - Johny"
+            android:gravity="center"
+            android:textColor="@color/greyDark"
+            android:textSize="@dimen/_20sdp"/>
+        <TextView
+            android:id="@+id/tvBusNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Bus No. 543"
+            android:layout_below="@id/tvAttendantName"
+            android:gravity="center"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="@color/greyDark"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerStoppage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvBusNo"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMenu"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_nav"
+            android:layout_margin="@dimen/_10sdp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

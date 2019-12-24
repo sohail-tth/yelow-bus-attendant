@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/splash_bg_white">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="@dimen/_4sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow">
+
+            <TextView
+                android:id="@+id/tvMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/select_tab_to_continue"
+                android:textSize="@dimen/_24sdp"
+                android:fontFamily="@font/sf_medium"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="left|center"
+                android:background="@drawable/buildings"
+                android:paddingTop="@dimen/_30sdp"
+                android:paddingRight="@dimen/_25sdp"
+                android:paddingLeft="@dimen/_25sdp"
+                android:paddingBottom="@dimen/_20sdp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/tvMsg"
+                android:background="@color/white"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tvDriveWithYelow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_transparent_grey_border"
+                    android:text="@string/drive_with_yelow"
+                    android:textSize="@dimen/_25sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:textColor="@color/greyDark"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/tvLeaseVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_transparent_grey_border"
+                    android:text="@string/lease_a_vehicle"
+                    android:textSize="@dimen/_25sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:textColor="@color/greyDark"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/tvAttachFleet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_transparent_grey_border"
+                    android:text="@string/attach_a_fleet"
+                    android:textSize="@dimen/_25sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:textColor="@color/greyDark"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_grey_filled"
+                    android:text="@string/sign_up"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_25sdp"
+                    android:fontFamily="@font/sf_medium"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

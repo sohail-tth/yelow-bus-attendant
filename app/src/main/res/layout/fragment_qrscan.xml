@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_4sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_centerInParent="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Prathamesh"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_80sdp"
+                    android:textColor="#092058"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutScanner"
+                    android:layout_width="@dimen/_220sdp"
+                    android:layout_height="@dimen/_220sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="visible">
+                    <com.tth.yelowbus_attendant.barcode_scanner.camera.CameraSourcePreview
+                        android:id="@+id/preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.tth.yelowbus_attendant.barcode_scanner.camera.GraphicOverlay
+                            android:id="@+id/graphicOverlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </com.tth.yelowbus_attendant.barcode_scanner.camera.CameraSourcePreview>
+
+                    <com.tth.yelowbus_attendant.barcode_scanner.ScannerOverlay
+                        android:id="@+id/scan_overlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#44000000"
+                        app:line_color="#7323DC"
+                        app:line_speed="6"
+                        app:line_width="5"
+                        app:square_height="250"
+                        app:square_width="250" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/qrValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp"
+                    android:text="150593"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:visibility="gone"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/_32sdp"
+                    android:textColor="#092058"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_yellow_filled"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/cancel"
+                        android:textAllCaps="true"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="#3B3B3B"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_transparent_yellow_border"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/confirm"
+                        android:textAllCaps="true"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="#3B3B3B"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/prathamesh"
+            android:background="@color/grey"
+            android:layout_above="@id/card"
+            android:translationZ="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_minus60sdp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
