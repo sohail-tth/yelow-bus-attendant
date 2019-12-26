@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/layourt_home_top"/>
-
 
     <fragment
         android:id="@+id/map2"
@@ -13,7 +11,115 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/layoutTop"
-        android:layout_above="@id/layoutBottom"/>
+        android:layout_above="@id/layoutBottom"
+        android:layout_marginTop="@dimen/_minus60sdp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp">
+            <TextView
+                android:id="@+id/tvAttendantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Attendant - Johny"
+                android:gravity="center"
+                android:background="#FFC208"
+                android:textColor="@color/greyDark"
+                android:textSize="@dimen/_20sdp"/>
+            <TextView
+                android:id="@+id/tvBusNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Bus No. 543"
+                android:layout_below="@id/tvAttendantName"
+                android:background="#FFC208"
+                android:gravity="center"
+                android:textSize="@dimen/_20sdp"
+                android:textColor="@color/greyDark"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerStoppage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFC208"
+                android:layout_marginBottom="@dimen/_minus11sdp"
+                android:layout_toLeftOf="@id/layoutCur"
+                android:layout_below="@id/tvBusNo"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/recyclerStoppage"
+                android:layout_below="@id/tvBusNo"
+                android:layout_above="@id/layoutCur"
+                android:background="#FFC208"/>
+
+            <RelativeLayout
+                android:id="@+id/layoutCur"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cur"
+                    android:scaleType="fitXY"/>
+
+                <RelativeLayout
+                    android:id="@+id/fabMenu"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/circle_yellow_filled">
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:src="@drawable/ic_nav"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/fabMenu"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_nav"-->
+<!--                    android:foregroundGravity="center"-->
+<!--                    android:backgroundTint="#FFD428"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_marginTop="@dimen/_20sdp"/>-->
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/yellow_bottom_shadow"
+            android:scaleType="fitXY"
+            android:layout_below="@id/layout2"
+            android:layout_marginRight="@dimen/_110sdp"
+            android:translationZ="@dimen/_minus7sdp"
+            android:layout_marginTop="@dimen/_minus15sdp"/>
+
+    </RelativeLayout>
+
 
 
     <LinearLayout
@@ -87,9 +193,11 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/btnSOS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -106,9 +214,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnMissedPickup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -126,10 +236,12 @@
                     android:textColor="#263238"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnFeedback"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
+                android:background="?selectableItemBackgroundBorderless"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -145,9 +257,11 @@
                     android:textColor="#263238"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnCall"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -164,9 +278,11 @@
                     android:textColor="#263238"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnManualScan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 

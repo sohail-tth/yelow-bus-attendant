@@ -130,8 +130,14 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
-                showEmailMobileSignUp();
+                if (userProfileType.equals("")){
+                    toast(SplashActivity.this,"Please choose the profile type first");
+                }
+                else
+                {
+                    dialog.dismiss();
+                    showEmailMobileSignUp();
+                }
             }
         });
     }
@@ -175,6 +181,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
                preference.setUserProfileType(userProfileType);
 
                startActivity(new Intent(SplashActivity.this, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                finish();
             }
         });
     }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.RequestHolidayFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/yellow">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_toLeftOf="@id/ivBack"
+                        android:text="@string/request_holiday"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_30sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:fontFamily="@font/sf_semibold"
+                        android:text="@string/kindly_fill_the_details_same"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_20sdp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/shadow_all">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_greydark_border"
+                android:drawableRight="@drawable/chevron_right"
+                android:fontFamily="@font/gibson"
+                android:gravity="start|center_vertical"
+                android:hint="@string/date"
+                android:padding="@dimen/_14sdp"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="#3B3B3B"
+                android:textSize="@dimen/_15sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shadow_all">
+
+            <EditText
+                android:id="@+id/tvReason"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:background="@drawable/rounded_corner_greydark_border"
+                android:fontFamily="@font/gibson"
+                android:gravity="start"
+                android:hint="@string/reason"
+                android:padding="@dimen/_14sdp"
+                android:singleLine="false"
+                android:textAllCaps="false"
+                android:textColor="#3B3B3B"
+                android:textSize="@dimen/_15sdp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shadow_all"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_greydark_border"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gibson"
+                    android:gravity="start|center_vertical"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="@string/substitute_arranged"
+                    android:textAllCaps="false"
+                    android:textColor="#3B3B3B"
+                    android:textSize="@dimen/_15sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tvYes"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginRight="@dimen/_40sdp"
+                        android:background="@drawable/circle_transparent_grey_border"
+                        android:gravity="center"
+                        android:text="@string/yes"
+                        android:textColor="#3B3B3B"
+                        android:textSize="@dimen/_40sdp" />
+
+                    <TextView
+                        android:id="@+id/tvNo"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:background="@drawable/circle_transparent_grey_border"
+                        android:gravity="center"
+                        android:text="@string/no"
+                        android:textColor="#3B3B3B"
+                        android:textSize="@dimen/_40sdp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_corner_transparent_grey_border"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/submit"
+            android:textAllCaps="true"
+            android:textColor="#1F1E1E" />
+
+    </LinearLayout>
+
+</LinearLayout>

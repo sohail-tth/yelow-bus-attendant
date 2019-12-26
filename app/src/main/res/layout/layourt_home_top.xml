@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_150sdp"
-        android:background="@color/yellow">
+        android:background="@color/white">
         <TextView
             android:id="@+id/tvAttendantName"
             android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:maxLines="1"
             android:text="Attendant - Johny"
             android:gravity="center"
+            android:background="@color/yellow"
             android:textColor="@color/greyDark"
             android:textSize="@dimen/_20sdp"/>
         <TextView
@@ -26,6 +27,7 @@
             android:maxLines="1"
             android:text="Bus No. 543"
             android:layout_below="@id/tvAttendantName"
+            android:background="@color/yellow"
             android:gravity="center"
             android:textSize="@dimen/_20sdp"
             android:textColor="@color/greyDark"/>
@@ -35,16 +37,43 @@
             android:id="@+id/recyclerStoppage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/yellow"
+            android:layout_toLeftOf="@id/layoutCur"
             android:layout_below="@id/tvBusNo"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabMenu"
-            android:layout_width="@dimen/_60sdp"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/recyclerStoppage"
+            android:layout_below="@id/tvBusNo"
+            android:layout_above="@id/layoutCur"
+            android:background="@color/yellow"/>
+
+        <RelativeLayout
+            android:id="@+id/layoutCur"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_60sdp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_nav"
-            android:layout_margin="@dimen/_10sdp"/>
+            android:layout_alignParentBottom="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cur"
+                android:scaleType="fitXY"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabMenu"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_nav"
+                android:foregroundGravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+        </RelativeLayout>
+
+
 
 
     </RelativeLayout>

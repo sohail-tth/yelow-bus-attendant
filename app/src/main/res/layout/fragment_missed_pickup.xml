@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.MissedPickupFragment">
+
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_8sdp"
+            android:background="#E6E6E6"
+            android:gravity="center_vertical">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/prathamesh"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStudName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Ashok Vijay Patil"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_12sdp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSchoolName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="ABC Hindi Medium School"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_12sdp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStdDiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="1st - A"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_12sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/accept"
+                    android:background="@drawable/rounded_corner_yellow_filled"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textColor="#242A37"
+                    android:textSize="@dimen/_14sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reject"
+                    android:background="@drawable/rounded_corner_transparent_yellow_border"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="#242A37"
+                    android:textSize="@dimen/_14sdp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 KM"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="#242A37"/>
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pickup"
+            android:layout_margin="@dimen/_10sdp"
+            android:textAllCaps="true"
+            android:textColor="#BEC2CE"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_medium"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Worli Village"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="#242E42"
+            android:textSize="@dimen/_16sdp"
+            android:fontFamily="@font/sf_medium"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/drop_off"
+            android:textAllCaps="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:textColor="#BEC2CE"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_medium"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="105 William St, Dadar, Salvation"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="#242E42"
+            android:textSize="@dimen/_16sdp"
+            android:fontFamily="@font/sf_medium"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map3"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layoutBottom" />
+
+</RelativeLayout>

@@ -14,6 +14,6 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        setFragment(new MainFragment(),R.id.container, MainFragment.class.getSimpleName(), true);
+        setFragment(new MainFragment(),R.id.container, MainFragment.class.getSimpleName(), false);
     }
 }

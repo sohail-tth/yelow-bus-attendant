@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:layout_margin="@dimen/_10sdp"
+        android:textSize="@dimen/_16sdp"
+        android:fontFamily="@font/sf_medium"
+        android:padding="@dimen/_4sdp"
+        android:textColor="#FF8900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        android:layout_margin="@dimen/_10sdp"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/sf_medium"
+        android:textColor="#BEC2CE"
+        android:padding="@dimen/_4sdp"
+        android:layout_alignParentRight="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/layoutPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/tvCancel"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/layoutPhoto"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp">
+                <ImageView
+                    android:id="@+id/ivPersonPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/prathamesh"/>
+
+                <ImageView
+                    android:id="@+id/ivCamera"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/camera_yellow"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tvEditPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_photo"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="#FF8900"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/sf_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:hint="@string/first_name"
+                android:fontFamily="@font/sf_medium"
+                android:textSize="@dimen/_17sdp"
+                />
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/sf_medium"
+                android:hint="@string/last_name"
+                android:textSize="@dimen/_17sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutPerson"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/phone_no"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:textColor="#BEC2CE"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="right"
+                android:text="9870268067"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/email"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:textColor="#BEC2CE"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="right"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Prathameshraorane91@gmail.com"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/gender"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:textColor="#BEC2CE"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="right"
+                android:text="Male"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/birthday"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_17sdp"
+                android:textColor="#BEC2CE"
+                android:fontFamily="@font/sf_medium"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="right"
+                android:text="19-09-1991"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/exc"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/excalamation_black_cirlce" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toRightOf="@id/exc"
+            android:text="@string/sos"
+            android:textColor="#263238"
+            android:textSize="@dimen/_50sdp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mag1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sos"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_toRightOf="@id/exc"
+            android:text="@string/plz_select_following_help_call"
+            android:textColor="#263238"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accident"
+            android:textColor="#0A1F44"
+            android:fontFamily="@font/sf_medium"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/_18sdp"
+            android:background="@drawable/shadow_all_white_filled"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:paddingTop="@dimen/_10sdp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/make_sure_every_child_is_safe"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="@dimen/_22sdp"
+            android:fontFamily="@font/sf_semibold"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ambulance_and_emergency_help_directed"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="@dimen/_18sdp"
+            android:fontFamily="@font/sf_semibold"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/plz_contact_our_executive_if"
+            android:gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_medium"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/layoutCur"
+            android:background="@color/yellow">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCallExecutive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/call_our_executive"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/sf_medium"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sdp"
+                android:background="@drawable/shadow_black_filled"
+                android:paddingLeft="@dimen/_20sdp"
+                android:paddingRight="@dimen/_20sdp"
+                android:paddingTop="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layoutCur"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cur"
+                android:scaleType="fitXY"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/ic_bell_yellow"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

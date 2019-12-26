@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layoutBottom"
+        android:background="@color/yellow">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/exc"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:src="@drawable/excalamation_black_cirlce" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/exc"
+                    android:text="@string/sos"
+                    android:textColor="#263238"
+                    android:textSize="@dimen/_50sdp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mag1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sos"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/exc"
+                    android:text="@string/plz_select_following_help_call"
+                    android:textColor="#263238"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTechnicalProblem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/technical_problem"
+                    android:textColor="#0A1F44"
+                    android:fontFamily="@font/sf_medium"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/_18sdp"
+                    android:background="@drawable/shadow_all_white_filled"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAccident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/accident"
+                    android:textColor="#0A1F44"
+                    android:fontFamily="@font/sf_medium"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/shadow_all_white_filled"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvChildNotWell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/child_not_feelng_well"
+                    android:textColor="#0A1F44"
+                    android:fontFamily="@font/sf_medium"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textSize="@dimen/_18sdp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/shadow_all_white_filled"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPuncture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tyre_accident"
+                    android:textColor="#0A1F44"
+                    android:fontFamily="@font/sf_medium"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/shadow_all_white_filled"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFuelEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fuel_empty"
+                    android:textColor="#0A1F44"
+                    android:fontFamily="@font/sf_medium"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textSize="@dimen/_18sdp"
+                    android:background="@drawable/shadow_all_white_filled"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_30sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/layoutCur"
+            android:background="@color/yellow">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCallExecutive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/call_our_executive"
+                android:textColor="#0A1F44"
+                android:fontFamily="@font/sf_medium"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sdp"
+                android:background="@drawable/shadow_all_white_filled"
+                android:paddingLeft="@dimen/_20sdp"
+                android:paddingRight="@dimen/_20sdp"
+                android:paddingTop="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layoutCur"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cur"
+                android:scaleType="fitXY"/>
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:layout_width="@dimen/_70sdp"
+               android:layout_height="@dimen/_70sdp"
+               android:layout_centerHorizontal="true"
+               android:layout_marginTop="@dimen/_20sdp"
+               android:src="@drawable/ic_bell_yellow"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_student_id"
+        android:textColor="#092058"
+        android:textSize="@dimen/_15sdp"/>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_transparent_grey_border"
+        android:padding="@dimen/_7sdp"
+        android:hint="student id"
+        android:gravity="center"
+        android:textColor="#092058"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:textSize="@dimen/_25sdp"
+        android:inputType="phone"
+        android:text="1991991"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:background="@drawable/rounded_corner_yellow_filled"
+            android:padding="@dimen/_7sdp"
+            android:textColor="#3B3B3B"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_15sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/confirm"
+            android:textAllCaps="true"
+            android:background="@drawable/rounded_corner_transparent_yellow_border"
+            android:padding="@dimen/_7sdp"
+            android:textColor="#3B3B3B"
+            android:gravity="center"
+            android:textSize="@dimen/_15sdp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
