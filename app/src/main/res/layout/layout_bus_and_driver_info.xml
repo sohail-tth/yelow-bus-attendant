@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layout_bus_and_driver_info"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+
+        <EditText
+            android:id="@+id/edtFleetDriversName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/drivers_name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+
+        <EditText
+            android:id="@+id/edtFleetDriversMobileNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/drivers_mobie_no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvFleetDriversAadhaarPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/drivers_aadhaar_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvFleetDriverPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/drivers_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtFleetDriversLicenseNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/license_number"
+            android:inputType="text"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvFleetDriverLicensePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/license_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtFleetAttendantsName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/attendants_name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+
+        <EditText
+            android:id="@+id/edtFleetAttendantsMobileNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/attendants_mobile_no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvFleetAttendantsAadhaarPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/attendants_aadhaar_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvFleetAttendantsPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/attendants_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtFleetBusNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/bus_number"
+            android:inputType="text"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvFleetBusPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/bus_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtFleetNoOfSets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/no_of_seats"
+            android:inputType="number"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtFleetChassisNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/chassis_number"
+            android:inputType="number"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtFleetSchoolZoneRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/school_zone_range"
+            android:inputType="text"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -3,62 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.SignupActivity">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/_7sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/layoutTop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_8sdp"
                 android:layout_marginLeft="@dimen/_6sdp"
                 android:layout_marginRight="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/_7sdp"
-                    android:textColor="#454F63"
-                    android:textSize="@dimen/_30sdp"
                     android:fontFamily="@font/gibson"
-                    android:text="Signup"/>
+                    android:padding="@dimen/_7sdp"
+                    android:text="Signup"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_30sdp" />
 
 
                 <TextView
+                    android:id="@+id/tvProfileLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/_3sdp"
-                    android:textColor="#454F63"
-                    android:textSize="@dimen/_20sdp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/_4sdp"
                     android:fontFamily="@font/gibson"
                     android:gravity="bottom"
-                    android:layout_gravity="bottom"
-                    android:text="For Fleet"/>
+                    android:padding="@dimen/_3sdp"
+                    android:singleLine="true"
+                    android:text="For Fleet"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_20sdp" />
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/btnBack"
-                    android:layout_width="@dimen/_16sdp"
-                    android:layout_height="@dimen/_26sdp"
-                    android:background="@drawable/chevron_right"
-                    android:padding="@dimen/_7sdp"
-                    android:fontFamily="@font/gibson"
-                    android:text="" />
 
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
@@ -82,6 +79,7 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/gibson"
                         android:gravity="center"
+                        android:singleLine="true"
                         android:padding="@dimen/_8sdp"
                         android:text="@string/fleet_owner_info"
                         android:textColor="#959DAD"
@@ -101,7 +99,7 @@
                 <View
                     android:layout_width="@dimen/_1sdp"
                     android:layout_height="match_parent"
-                    android:background="@color/grey"/>
+                    android:background="@color/grey" />
 
                 <RelativeLayout
                     android:id="@+id/tabBusDriver"
@@ -116,6 +114,7 @@
                         android:fontFamily="@font/gibson"
                         android:gravity="center"
                         android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
                         android:text="@string/bus_and_driver_info"
                         android:textColor="#959DAD"
                         android:textSize="@dimen/_13sdp"
@@ -132,6 +131,78 @@
 
                 </RelativeLayout>
 
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey" />
+
+                <RelativeLayout
+                    android:id="@+id/tabDriverAndAttendant"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/gibson"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/driver_and_attendant_info"
+                        android:singleLine="true"
+                        android:textColor="#959DAD"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/busDriverAndAttendantIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_alignParentBottom="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/tab_indicator_notif"
+                        android:visibility="invisible" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey" />
+
+                <RelativeLayout
+                    android:id="@+id/tabBus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/gibson"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:text="@string/bus_info"
+                        android:textColor="#959DAD"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/busBusIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_alignParentBottom="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/tab_indicator_notif"
+                        android:visibility="invisible" />
+
+                </RelativeLayout>
+
             </LinearLayout>
 
             <View
@@ -139,503 +210,45 @@
                 android:layout_height="@dimen/_1sdp"
                 android:background="@color/grey" />
 
-            <LinearLayout
-                android:id="@+id/layoutPersonal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
+            <!---  /////////////////-FLEET OWNER INFO /////////////////////-->
+            <include layout="@layout/layout_fleet_owners_info" />
 
+            <!--     ////////////////// BUS AND DRIVER INFO-->
+            <include layout="@layout/layout_bus_and_driver_info" />
 
-                    <EditText
-                        android:id="@+id/edtEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="User Email Id"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:inputType="textEmailAddress"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
+            <!--  //////////////////DRIVERS AND ATTENDANTS INFO-->
+            <include layout="@layout/layout_drivers_attendants_info" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtUserName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="User Name"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:inputType="textPersonName"
-                        android:textSize="@dimen/_15sdp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <EditText
-                        android:id="@+id/edtPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Set Password"
-                        android:textColor="#3B3B3B"
-                        android:inputType="textPassword"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <EditText
-                        android:id="@+id/edtConfPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Confirm Password"
-                        android:inputType="textPassword"
-                        android:textColor="#3B3B3B"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtAddr1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Address1"
-                        android:textColor="#3B3B3B"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:inputType="textPostalAddress"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtAddr2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:textSize="@dimen/_15sdp"
-                        android:fontFamily="@font/gibson"
-                        android:hint="Address2"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:textColor="#3B3B3B"
-                        android:inputType="textPostalAddress" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtCityPincode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:textSize="@dimen/_15sdp"
-                        android:fontFamily="@font/gibson"
-                        android:hint="City &amp; Pincode"
-                        android:textColor="#3B3B3B"
-                        android:inputType="number" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <EditText
-                        android:id="@+id/edtState"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:textSize="@dimen/_15sdp"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:singleLine="true"
-                        android:hint="State"
-                        android:textColor="#3B3B3B" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <TextView
-                        android:id="@+id/txtBirthDtae"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:textSize="@dimen/_15sdp"
-                        android:fontFamily="@font/gibson"
-                        android:hint="Birth Date"
-                        android:textColor="#3B3B3B" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtMobileNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:textSize="@dimen/_15sdp"
-                        android:fontFamily="@font/gibson"
-                        android:hint="Mobile Number"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:inputType="phone"
-                        android:maxLength="10"
-                        android:textColor="#3B3B3B" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <EditText
-                        android:id="@+id/edtAadharNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:textSize="@dimen/_15sdp"
-                        android:fontFamily="@font/gibson"
-                        android:hint="Aadhar Card Number"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:maxLength="12"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:textColor="#3B3B3B" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <Button
-                        android:id="@+id/btnAadharPhoto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:text="User Aadhar Card Photo"
-                        android:drawableRight="@drawable/ic_id_card"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-            </LinearLayout>
+            <!--///////////////    BUS INFO-->
+            <include layout="@layout/layout_bus_info" />
 
 
-            <LinearLayout
-                android:id="@+id/layoutStudent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtStudName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:hint="@string/owners_email_id"
-                        android:inputType="textEmailAddress"
-                        android:padding="@dimen/_14sdp"
-                        android:singleLine="true"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <TextView
-                        android:id="@+id/txtStudBirthDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Birth Date"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtStudStandrd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Standard"
-                        android:maxLength="2"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:inputType="number"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtStudDivision"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Division"
-                        android:maxLength="5"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtStudSchoolName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="School Name"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtStudSchoolAddr"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="School Address"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:inputType="textPostalAddress"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-
-                    <EditText
-                        android:id="@+id/edtStudAadharNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:drawableRight="@drawable/chevron_right"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:hint="Student's Aadhar Card Number"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:singleLine="true"
-                        android:inputType="number"
-                        android:maxLength="12"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <Button
-                        android:id="@+id/btnStudAadharPhoto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:text="Student's Aadhar Card Photo"
-                        android:drawableRight="@drawable/ic_id_card"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <Button
-                        android:id="@+id/btnStudPhoto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:text="Student Photo"
-                        android:drawableRight="@drawable/ic_id_card"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shadow_all">
-                    <Button
-                        android:id="@+id/btnStudSchoolIdPhoto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_corner_greydark_border"
-                        android:fontFamily="@font/gibson"
-                        android:gravity="start|center_vertical"
-                        android:padding="@dimen/_14sdp"
-                        android:text="School ID Photo"
-                        android:drawableRight="@drawable/ic_id_card"
-                        android:textAllCaps="false"
-                        android:textColor="#3B3B3B"
-                        android:textSize="@dimen/_15sdp" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-
+            <!--            TERMS CONDITIONS-->
             <LinearLayout
                 android:id="@+id/layoutTerms"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="@font/gibson"
                     android:text="@string/terms_and_condtions"
                     android:textColor="#0A00FF"
-                    android:textSize="@dimen/_15sdp"
-                    android:fontFamily="@font/gibson"
-                    android:layout_margin="@dimen/_10sdp"/>
+                    android:textSize="@dimen/_15sdp" />
 
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/cbTermsCond"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/accept_terms_cond"
-                    android:textSize="@dimen/_15sdp"
                     android:layout_marginLeft="@dimen/_10sdp"
-                    android:textColor="#0A00FF"/>
+                    android:text="@string/accept_terms_cond"
+                    android:textColor="#0A00FF"
+                    android:textSize="@dimen/_15sdp" />
             </LinearLayout>
 
             <RelativeLayout
@@ -647,55 +260,32 @@
                     android:id="@+id/next"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
                     android:background="@drawable/shadow_yellow_filled"
                     android:gravity="center_vertical"
-                    android:layout_alignParentRight="true">
+                    android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/tvNext"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/gibson"
-                        android:text="Next"
-                        android:gravity="center"
                         android:layout_marginLeft="@dimen/_4sdp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_15sdp" />
-                    <ImageView
-                        android:layout_width="@dimen/_10sdp"
-                        android:layout_height="@dimen/_10sdp"
-                        android:src="@drawable/chevron_right"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="@dimen/_4sdp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/prev"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/shadow_yellow_filled"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="@dimen/_10sdp"
-                        android:layout_height="@dimen/_10sdp"
-                        android:src="@drawable/chevron_right"
-                        android:rotation="180"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/_8sdp"/>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/gibson"
                         android:gravity="center"
-                        android:text="Back"
+                        android:text="Next"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_15sdp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:src="@drawable/chevron_right" />
+
                 </LinearLayout>
+
 
             </RelativeLayout>
 
@@ -703,8 +293,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_150sdp"
-                android:src="@drawable/buildings"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/buildings" />
 
         </LinearLayout>
     </ScrollView>

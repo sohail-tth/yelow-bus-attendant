@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.PhotoUploadFragment">
+
+   <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/ivBack"
+       android:layout_width="@dimen/_20sdp"
+       android:layout_height="@dimen/_20sdp"
+       android:src="@drawable/chevron_right"
+       android:layout_alignParentRight="true"
+       android:layout_margin="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:text="Driver's Aadhaar Card Photo"
+        android:layout_below="@id/ivBack"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textSize="@dimen/_25sdp"
+        android:textColor="#3B3B3B"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tvTitle"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/rounded_corner_yellow_filled">
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:src="@drawable/ic_camera"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/tvUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Upload Aadhaar Card Photo"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_25sdp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btnPrev"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shadow_yellow_filled"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gibson"
+                android:text="Previous Step"
+                android:gravity="center"
+                android:padding="@dimen/_6sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:textColor="#3B3B3B"
+                android:textSize="@dimen/_20sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnNext"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shadow_yellow_filled"
+            android:gravity="center"
+            android:layout_alignParentRight="true">
+            <TextView
+                android:id="@+id/tvNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gibson"
+                android:text="Next Step"
+                android:padding="@dimen/_6sdp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:textColor="#3B3B3B"
+                android:textSize="@dimen/_20sdp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layoutBusInfo"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtDriveBusNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/bus_number"
+            android:inputType="text"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvDriveBusPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/bus_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtDriveNoOfSets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/no_of_seats"
+            android:inputType="number"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvDriveBusRcPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/bus_rc_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvDriveBusPermitPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/bus_permit_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <TextView
+            android:id="@+id/tvDriveBusinsurancePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/bus_insurance_photo"
+            android:drawableRight="@drawable/ic_id_card"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_all">
+        <EditText
+            android:id="@+id/edtDriveSchoolZoneRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_greydark_border"
+            android:drawableRight="@drawable/chevron_right"
+            android:fontFamily="@font/gibson"
+            android:gravity="start|center_vertical"
+            android:hint="@string/school_zone_range"
+            android:inputType="text"
+            android:padding="@dimen/_14sdp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="#3B3B3B"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+</LinearLayout>

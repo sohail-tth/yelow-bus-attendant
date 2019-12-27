@@ -82,7 +82,7 @@ public class ImageUtils {
                 ex.printStackTrace();
             }
             if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(activity, "com.tth.yellowbus.provider", photoFile);
+                Uri photoURI = FileProvider.getUriForFile(activity, "com.tth.yelowbus_attendant.provider", photoFile);
                 pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 pictureIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 imageIntentListener.onCameraIntent(pictureIntent, REQUEST_CAPTURE_IMAGE);

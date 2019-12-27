@@ -51,13 +51,13 @@ public class ReferEarnFragment extends BaseFragment implements View.OnClickListe
         share.setType("text/plain");
         share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         share.putExtra(Intent.EXTRA_SUBJECT, "Refer and earn!");
-        share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.tth.yellowbus");
+        share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.tth.yelowbus_attendant");
         startActivity(Intent.createChooser(share, "Share link!"));
 
 
 //        Go to play store ----- intent
 //        Intent intent = new Intent(Intent.ACTION_VIEW);
-//        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.tth.yellowbus"));
+//        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.tth.yelowbus_attendant"));
 //        startActivity(intent);
     }
 }
