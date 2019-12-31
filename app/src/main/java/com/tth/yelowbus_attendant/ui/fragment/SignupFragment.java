@@ -34,26 +34,54 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
         tvFleetDriverPhoto, tvFleetDriverLicensePhoto, tvFleetAttendantsAadhaarPhoto, tvFleetAttendantsPhoto, tvFleetBusPhoto;
 
 
-/*  ********************  lease photoa textview **************************************************/
+/*  ********************  lease photos textview **************************************************/
     private TextView tvLeaseDriversAadhaarPhoto, tvLeaseDriverPhoto, tvLeaseLicensePhoto, tvLeaseAttendantsAadhaarPhoto,
         tvLeaseAttendantsPhoto, tvLeaseOwnersCancelledCheque;
 
 
-/*   ******************* bus info textview ************************************/
+/*   ******************* bus info photos textview ************************************/
     private TextView tvDriveBusPhoto, tvDriveBusRcPhoto, tvDriveBusPermitPhoto, tvDriveBusinsurancePhoto;
 
 
 /*  ************** ALL  image paths*/
     public static String fleetOwnersCancelledChequePath="", fleetOwnersAadhaarPath="", fleetOwnersPhotoPath="",
-            fleetDriversAadhaarPath="", fleetDriversPhotoPath="", fleetlicensePath="", fleetAtendantsAadhaarPath="",
+            fleetDriversAadhaarPath="", fleetDriversPhotoPath="", fleetlicensePath="", fleetAttendantsAadhaarPath ="",
             fleetAttendantsPhotoPath="", fleetBusPhotoPath="",
 
 
             leaseDriversAadhaarPath="", leaseDriverPhotoPath="", leaseLicensePath="", leaseAttendantsAadhaarPath="",
-            leaseAttendantsPhotoPath="", leaseCancelledCheque="",
+            leaseAttendantsPhotoPath="", leaseCancelledChequePath ="",
 
-
+            driveDriversAadhaarPath="", driveDriverPhotoPath="", driveLicensePath="", driveAttendantsAadhaarPath="",
+            driveAttendantsPhotoPath="", driveCancelledCheque="",
             driveBusPhotoPath="", driveBusRcPath="", driveBusPermitPath="", driveBusInsurancePath="";
+
+    public static final String FROM_FLEET_CANCELLED_CHEQUE = "fleet_cancelled_cheque";
+    public static final String FROM_FLEET_OWNER_AADHAAR = "fleet_owner_aadhaar";
+    public static final String FROM_FLEET_OWNER_PHOTO = "fleet_owner_photo";
+    public static final String FROM_FLEET_DRIVER_AADHAAR = "fleet_driver_aadhaar";
+    public static final String FROM_FLEET_DRIVER_PHOTO = "fleet_driver_photo";
+    public static final String FROM_FLEET_LICENSE_PHOTO = "fleet_license_photo";
+    public static final String FROM_FLEET_ATTENDANTS_AADHAAR = "fleet_attendants_aadhaar";
+    public static final String FROM_FLEET_ATTENDANTS_PHOTO = "fleet_attendants_photo";
+    public static final String FROM_FLEET_BUS_PHOTO = "fleet_bus_photo";
+    public static final String FROM_LEASE_DRIVERS_AADHAAR = "lease_driver_aadhaar";
+    public static final String FROM_LEASE_DRIVER_PHOTO = "lease_driver_photo";
+    public static final String FROM_LEASE_LICENSE_PHOTO = "lease_license_photo";
+    public static final String FROM_LEASE_ATTENDANT_AADHAAR = "lease_attention";
+    public static final String FROM_LEASE_ATTENDANTS_PHOTO = "lease_attendants_photo";
+    public static final String FROM_LEASE_CANCELLED_CHEQUE = "lease_cancelled_cheque";
+
+    public static final String FROM_DRIVE_DRIVERS_AADHAAR = "drive_driver_aadhaar";
+    public static final String FROM_DRIVE_DRIVER_PHOTO = "drive_driver_photo";
+    public static final String FROM_DRIVE_LICENSE_PHOTO = "drive_license_photo";
+    public static final String FROM_DRIVE_ATTENDANT_AADHAAR = "drive_attention";
+    public static final String FROM_DRIVE_ATTENDANTS_PHOTO = "drive_attendants_photo";
+    public static final String FROM_DRIVE_CANCELLED_CHEQUE = "drive_cancelled_cheque";
+    public static final String FROM_DRIVE_BUS_PHOTO = "drive_bus_photo";
+    public static final String FROM_DRIVE_BUS_RC = "drive_bus_rc";
+    public static final String FROM_DRIVE_BUS_PERMIT = "drive_bus_permit";
+    public static final String FROM_DRIVE_BUS_INSURANCE = "drive_bus_insurance";
 
 
     @Nullable
@@ -81,6 +109,28 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
 
 
         tvFleetOwnersCancelledCheque = view.findViewById(R.id.tvFleetOwnersCancelledCheque);
+        tvFleetOwnersAadharPhoto = view.findViewById(R.id.tvFleetOwnersAadharPhoto);
+        tvFleetOwnersPhoto = view.findViewById(R.id.tvFleetOwnersPhoto);
+        tvFleetDriversAadhaarPhoto = view.findViewById(R.id.tvFleetDriversAadhaarPhoto);
+        tvFleetDriverPhoto = view.findViewById(R.id.tvFleetDriverPhoto);
+        tvFleetDriverLicensePhoto = view.findViewById(R.id.tvFleetDriverLicensePhoto);
+        tvFleetAttendantsAadhaarPhoto = view.findViewById(R.id.tvFleetAttendantsAadhaarPhoto);
+        tvFleetAttendantsPhoto = view.findViewById(R.id.tvFleetAttendantsPhoto);
+        tvFleetBusPhoto = view.findViewById(R.id.tvFleetBusPhoto);
+        tvLeaseDriversAadhaarPhoto = view.findViewById(R.id.tvLeaseDriversAadhaarPhoto);
+        tvLeaseDriverPhoto = view.findViewById(R.id.tvLeaseDriverPhoto);
+        tvLeaseLicensePhoto = view.findViewById(R.id.tvLeaseLicensePhoto);
+        tvLeaseAttendantsAadhaarPhoto = view.findViewById(R.id.tvLeaseAttendantsAadhaarPhoto);
+        tvLeaseAttendantsPhoto = view.findViewById(R.id.tvLeaseAttendantsPhoto);
+        tvLeaseOwnersCancelledCheque = view.findViewById(R.id.tvLeaseOwnersCancelledCheque);
+        tvDriveBusPhoto = view.findViewById(R.id.tvDriveBusPhoto);
+        tvDriveBusRcPhoto = view.findViewById(R.id.tvDriveBusRcPhoto);
+        tvDriveBusPermitPhoto = view.findViewById(R.id.tvDriveBusPermitPhoto);
+        tvDriveBusinsurancePhoto = view.findViewById(R.id.tvDriveBusinsurancePhoto);
+
+
+
+
 
         layout_fleet_owners_info.setVisibility(View.GONE);
         layout_bus_and_driver_info.setVisibility(View.GONE);
@@ -98,6 +148,24 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
 
 
         tvFleetOwnersCancelledCheque.setOnClickListener(this);
+        tvFleetOwnersAadharPhoto.setOnClickListener(this);
+        tvFleetOwnersPhoto.setOnClickListener(this);
+        tvFleetDriversAadhaarPhoto.setOnClickListener(this);
+        tvFleetDriverPhoto.setOnClickListener(this);
+        tvFleetDriverLicensePhoto.setOnClickListener(this);
+        tvFleetAttendantsAadhaarPhoto.setOnClickListener(this);
+        tvFleetAttendantsPhoto.setOnClickListener(this);
+        tvFleetBusPhoto.setOnClickListener(this);
+        tvLeaseDriversAadhaarPhoto.setOnClickListener(this);
+        tvLeaseDriverPhoto.setOnClickListener(this);
+        tvLeaseLicensePhoto.setOnClickListener(this);
+        tvLeaseAttendantsAadhaarPhoto.setOnClickListener(this);
+        tvLeaseAttendantsPhoto.setOnClickListener(this);
+        tvLeaseOwnersCancelledCheque.setOnClickListener(this);
+        tvDriveBusPhoto.setOnClickListener(this);
+        tvDriveBusRcPhoto.setOnClickListener(this);
+        tvDriveBusPermitPhoto.setOnClickListener(this);
+        tvDriveBusinsurancePhoto.setOnClickListener(this);
 
 
         showProfileTypeFields();
@@ -219,9 +287,101 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
                 break;
 
             case R.id.tvFleetOwnersCancelledCheque:
-                PhotoUploadFragment uploadFragment = new PhotoUploadFragment(fleetOwnersCancelledChequePath,"Owenr's Cancelled Cheque","Upload Cancelled Cheque");
+                PhotoUploadFragment uploadFragment = new PhotoUploadFragment(fleetOwnersCancelledChequePath,"Owner's Cancelled Cheque","Upload Cancelled Cheque",FROM_FLEET_CANCELLED_CHEQUE);
                 setFragment((AppCompatActivity)getActivity(),uploadFragment,R.id.signupContainer,uploadFragment.getClass().getSimpleName(),true);
                 break;
+
+            case R.id.tvFleetOwnersAadharPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetOwnersAadhaarPath,"Owner's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_FLEET_OWNER_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetOwnersPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetOwnersPhotoPath,"Owner's Photo","Upload Owner's Photo",FROM_FLEET_OWNER_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetDriversAadhaarPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetDriversAadhaarPath,"Driver's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_FLEET_DRIVER_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetDriverPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetDriversPhotoPath,"Driver's Photo","Upload Driver's Photo",FROM_FLEET_DRIVER_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetDriverLicensePhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetlicensePath,"License Photo","Upload License's Photo",FROM_FLEET_LICENSE_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetAttendantsAadhaarPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetAttendantsAadhaarPath,"Attendant's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_FLEET_ATTENDANTS_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetAttendantsPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetAttendantsPhotoPath,"Attendant's Photo","Upload Attendant's Photo",FROM_FLEET_ATTENDANTS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvFleetBusPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetBusPhotoPath,"Bus Photo","Upload Bus Photo",FROM_FLEET_BUS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvLeaseDriversAadhaarPhoto:
+                if (profileType.equals(Constants.LEASE_VEHICLE))
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseDriversAadhaarPath,"Driver's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_LEASE_DRIVERS_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                else
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveDriversAadhaarPath,"Driver's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_DRIVE_DRIVERS_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvLeaseDriverPhoto:
+                if (profileType.equals(Constants.LEASE_VEHICLE))
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseDriverPhotoPath,"Driver's Photo","Upload Driver's Photo",FROM_LEASE_DRIVER_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                else
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveDriverPhotoPath,"Driver's Photo","Upload Driver's Photo",FROM_DRIVE_DRIVER_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvLeaseLicensePhoto:
+                if (profileType.equals(Constants.LEASE_VEHICLE))
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseLicensePath,"License Photo","Upload License's Photo",FROM_LEASE_LICENSE_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                else
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveLicensePath,"License Photo","Upload License's Photo",FROM_DRIVE_LICENSE_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvLeaseAttendantsAadhaarPhoto:
+                if (profileType.equals(Constants.LEASE_VEHICLE))
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseAttendantsAadhaarPath,"Attendant's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_LEASE_ATTENDANT_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                else
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveAttendantsAadhaarPath,"Attendant's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_DRIVE_ATTENDANT_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvLeaseAttendantsPhoto:
+                if (profileType.equals(Constants.LEASE_VEHICLE))
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseAttendantsPhotoPath,"Attendant's Photo","Upload Attendant's Photo",FROM_LEASE_ATTENDANTS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                else
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveAttendantsPhotoPath,"Attendant's Photo","Upload Attendant's Photo",FROM_LEASE_ATTENDANTS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvLeaseOwnersCancelledCheque:
+                if (profileType.equals(Constants.LEASE_VEHICLE))
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseCancelledChequePath,"Cancelled Cheque","Upload Cancelled Cheque",FROM_LEASE_CANCELLED_CHEQUE),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                else
+                    setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveCancelledCheque,"Cancelled Cheque","Upload Cancelled Cheque",FROM_DRIVE_CANCELLED_CHEQUE),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvDriveBusPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveBusPhotoPath,"Bus Photo","Upload Bus Photo",FROM_DRIVE_BUS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvDriveBusRcPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveBusRcPath,"Bus RC Photo","Upload Bus RC Photo",FROM_DRIVE_BUS_RC),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvDriveBusPermitPhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveBusPermitPath,"Bus Permit Photo","Upload Bus Permit Photo",FROM_DRIVE_BUS_PERMIT),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+            case R.id.tvDriveBusinsurancePhoto:
+                setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveBusInsurancePath,"Bus Insurance Photo","Upload Bus Insurance Photo",FROM_DRIVE_BUS_INSURANCE),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
+                break;
+
+
         }
 
     }

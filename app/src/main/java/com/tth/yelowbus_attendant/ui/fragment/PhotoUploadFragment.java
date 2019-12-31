@@ -2,7 +2,6 @@ package com.tth.yelowbus_attendant.ui.fragment;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +18,6 @@ import android.widget.TextView;
 
 import com.tth.yelowbus_attendant.R;
 import com.tth.yelowbus_attendant.util.ImageUtils;
-
-import java.io.File;
 
 
 public class PhotoUploadFragment extends BaseFragment implements View.OnClickListener {
@@ -35,11 +31,13 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
 
     String selectedImagePath = "";
     String title = "", uploadMsg = "";
+    String from = "";
 
-    public PhotoUploadFragment(String selectedImagePath, String title, String uploadMsg) {
+    public PhotoUploadFragment(String selectedImagePath, String title, String uploadMsg, String from) {
         this.selectedImagePath = selectedImagePath;
         this.title = title;
         this.uploadMsg = uploadMsg;
+        this.from = from;
     }
 
     public String getSelectedImagePath() {
@@ -125,18 +123,132 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
             switch (requestCode) {
                 case IMAGE_PICK:
                     selectedImagePath = imageUtils.getAbsolutePath(getActivity(), data.getData());
-//                    SignupFragment1.aadharPhotoPath = selectedAadharImagePath;
-                    File file2 = new File(selectedImagePath);
+                    setSelectedImagePath(selectedImagePath);
                     ivPhoto.setImageURI(Uri.parse(selectedImagePath));
                     break;
 
                 case REQUEST_CAPTURE_IMAGE:
                     selectedImagePath = ImageUtils.imageFilePath;
-//                    SignupFragment1.aadharPhotoPath = selectedAadharImagePath;
-                    File file = new File(selectedImagePath);
+                    setSelectedImagePath(selectedImagePath);
                     ivPhoto.setImageURI(Uri.parse(selectedImagePath));
                     break;
             }
+        }
+    }
+
+
+    public void setSelectedImagePath(String selectedImagePath){
+        switch (from){
+            case SignupFragment.FROM_FLEET_CANCELLED_CHEQUE:
+                SignupFragment.fleetOwnersCancelledChequePath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_FLEET_OWNER_AADHAAR:
+                SignupFragment.fleetOwnersAadhaarPath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_FLEET_OWNER_PHOTO:
+                SignupFragment.fleetOwnersPhotoPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_FLEET_DRIVER_AADHAAR:
+                SignupFragment.fleetDriversAadhaarPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_FLEET_DRIVER_PHOTO:
+                SignupFragment.fleetDriversPhotoPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_FLEET_LICENSE_PHOTO:
+                SignupFragment.fleetlicensePath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_FLEET_ATTENDANTS_AADHAAR:
+                SignupFragment.fleetAttendantsAadhaarPath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_FLEET_ATTENDANTS_PHOTO:
+                SignupFragment.fleetAttendantsPhotoPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_FLEET_BUS_PHOTO:
+                SignupFragment.fleetBusPhotoPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_LEASE_DRIVERS_AADHAAR:
+                SignupFragment.leaseDriversAadhaarPath = selectedImagePath;
+                break;
+
+
+
+
+
+
+
+
+
+
+            case SignupFragment.FROM_LEASE_DRIVER_PHOTO:
+                SignupFragment.leaseDriverPhotoPath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_LEASE_LICENSE_PHOTO:
+                SignupFragment.leaseLicensePath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_LEASE_ATTENDANT_AADHAAR:
+                SignupFragment.leaseAttendantsAadhaarPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_LEASE_ATTENDANTS_PHOTO:
+                SignupFragment.leaseAttendantsPhotoPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_LEASE_CANCELLED_CHEQUE:
+                SignupFragment.leaseCancelledChequePath = selectedImagePath;
+                break;
+
+
+
+            case SignupFragment.FROM_DRIVE_DRIVERS_AADHAAR:
+                SignupFragment.driveDriversAadhaarPath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_DRIVE_DRIVER_PHOTO:
+                SignupFragment.driveDriverPhotoPath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_DRIVE_LICENSE_PHOTO:
+                SignupFragment.driveLicensePath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_DRIVE_ATTENDANT_AADHAAR:
+                SignupFragment.driveAttendantsAadhaarPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_DRIVE_ATTENDANTS_PHOTO:
+                SignupFragment.driveAttendantsPhotoPath = selectedImagePath;
+                break;
+
+
+
+
+
+
+
+
+
+            case SignupFragment.FROM_DRIVE_CANCELLED_CHEQUE:
+                SignupFragment.driveCancelledCheque = selectedImagePath;
+                break;
+            case SignupFragment.FROM_DRIVE_BUS_PHOTO:
+                SignupFragment.driveBusPhotoPath = selectedImagePath;
+                break;
+            case SignupFragment.FROM_DRIVE_BUS_RC:
+                SignupFragment.driveBusRcPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_DRIVE_BUS_PERMIT:
+                SignupFragment.driveBusPermitPath = selectedImagePath;
+                break;
+
+            case SignupFragment.FROM_DRIVE_BUS_INSURANCE:
+                SignupFragment.driveBusInsurancePath = selectedImagePath;
+                break;
+
+
         }
     }
 

@@ -76,7 +76,7 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
 
 
     private View layoutScanner;
-    private TextView qrValue;
+    private TextView qrValue, tvCancel;
 
     public QRScanFragment() {
     }
@@ -153,9 +153,12 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
 
         layoutScanner = view.findViewById(R.id.layoutScanner);
         qrValue = view.findViewById(R.id.qrValue);
+        tvCancel = view.findViewById(R.id.tvCancel);
 
         layoutScanner.setVisibility(View.VISIBLE);
         qrValue.setVisibility(View.GONE);
+
+        tvCancel.setOnClickListener(this);
 
         return view;
 
@@ -225,12 +228,9 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
                 .setRequestedFps(1.0f);
 
         // make sure that auto focus is an available option
-        builder = builder.setFocusMode(
-                autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null);
+        builder = builder.setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null);
 
-        mCameraSource = builder
-                .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
-                .build();
+        mCameraSource = builder.setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null).build();
     }
 
     /**
@@ -265,7 +265,6 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
         startCameraSource();
         if (sentToSettings) {
             if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                //Got Permission
                 createCameraSource(autoFocus, useFlash);
             } else {
                 mListener.onCameraPermissionDenied();
@@ -304,11 +303,9 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
      */
     private void startCameraSource() throws SecurityException {
         // check that the device has play services available.
-        int code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(
-                getActivity());
+        int code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getActivity());
         if (code != ConnectionResult.SUCCESS) {
-            Dialog dlg =
-                    GoogleApiAvailability.getInstance().getErrorDialog(getActivity(), code, RC_HANDLE_GMS);
+            Dialog dlg = GoogleApiAvailability.getInstance().getErrorDialog(getActivity(), code, RC_HANDLE_GMS);
             dlg.show();
         }
 
@@ -374,7 +371,11 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.tvCancel:
+                getActivity().onBackPressed();
+                break;
+        }
     }
 
     @Override
@@ -389,22 +390,26 @@ public class QRScanFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onScanned(final Barcode barcode) {
 
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                layoutScanner.setVisibility(View.GONE);
-                qrValue.setVisibility(View.VISIBLE);
-                qrValue.setText(barcode.rawValue);
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    layoutScanner.setVisibility(View.GONE);
+                    qrValue.setVisibility(View.VISIBLE);
+                    qrValue.setText(barcode.rawValue);
 
-            }
-        });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         if (mListener != null && !isPaused) {
             if (getActivity() == null) {
                 return;
             }
-                 getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     mListener.onScanned(barcode);

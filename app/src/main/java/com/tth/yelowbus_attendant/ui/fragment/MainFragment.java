@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,17 +26,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.CaptureActivity;
 import com.tth.yelowbus_attendant.R;
 import com.tth.yelowbus_attendant.adapter.StoppageAdapter;
 import com.tth.yelowbus_attendant.model.StoppageModel;
+import com.tth.yelowbus_attendant.ui.activity.QRScannerActivity;
 import com.tth.yelowbus_attendant.ui.fragment.settings.SettingsFragment;
 import com.tth.yelowbus_attendant.ui.fragment.sos.SOSMainFragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +56,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener, 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private View fabMenu;
+    private QRButtonClickListener qrButtonClickListener;
 
     private RecyclerView recyclerStoppage;
     private StoppageAdapter adapter;
@@ -130,7 +140,11 @@ public class MainFragment extends BaseFragment implements View.OnClickListener, 
 
             case R.id.ivScanQR:
                 if (hasCameraPermission()){
-                    setFragment((AppCompatActivity) getActivity(), QRScanFragment.newInstance(true,false), R.id.container, QRScanFragment.class.getSimpleName(), true);
+
+                    if (qrButtonClickListener != null)
+                        qrButtonClickListener.onQRClick();
+
+//                    setFragment((AppCompatActivity) getActivity(), QRScanFragment.newInstance(true,false), R.id.container, QRScanFragment.class.getSimpleName(), true);
 
                 }
                 else requestCameraPermission();
@@ -232,5 +246,15 @@ public class MainFragment extends BaseFragment implements View.OnClickListener, 
         map = googleMap;
         map.getUiSettings().setMapToolbarEnabled(false);
 
+    }
+
+
+
+    public void setQrButtonClickListener(QRButtonClickListener qrButtonClickListener){
+        this.qrButtonClickListener = qrButtonClickListener;
+    }
+
+    public interface QRButtonClickListener{
+        void onQRClick();
     }
 }
