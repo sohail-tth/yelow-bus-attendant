@@ -69,6 +69,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@drawable/shadow_yellow_filled"
+            android:visibility="gone"
             android:gravity="center">
             <TextView
                 android:layout_width="wrap_content"

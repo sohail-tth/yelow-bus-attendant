@@ -72,7 +72,7 @@
                     android:padding="@dimen/_6sdp"
                     android:hint="@string/email_id"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:textSize="@dimen/_25sdp"
+                    android:textSize="@dimen/_20sdp"
                     android:textColor="@color/black"
                     android:inputType="textEmailAddress"
                     android:fontFamily="@font/sf_medium"/>
@@ -85,7 +85,7 @@
                     android:hint="@string/city"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_25sdp"
+                    android:textSize="@dimen/_20sdp"
                     android:maxLength="20"
                     android:fontFamily="@font/sf_medium"/>
 
@@ -98,7 +98,7 @@
                     android:hint="@string/mobile_number"
                     android:textColor="@color/black"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:textSize="@dimen/_25sdp"
+                    android:textSize="@dimen/_20sdp"
                     android:maxLength="10"
                     android:fontFamily="@font/sf_medium"/>
 

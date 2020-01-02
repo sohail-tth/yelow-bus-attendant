@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.app.ActivityCompat;
 
 import android.view.LayoutInflater;
@@ -24,6 +25,8 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
 
     private TextView tvUpload, tvTitle;
     private ImageView ivPhoto;
+    private View btnNext;
+    private AppCompatImageView ivBack;
     private final int IMAGE_PICK = 111, REQUEST_CAPTURE_IMAGE = 222;
     private final int RC_CAMERA = 123;
     ImageUtils imageUtils;
@@ -60,19 +63,20 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
         tvUpload = view.findViewById(R.id.tvUpload);
         ivPhoto = view.findViewById(R.id.ivPhoto);
         tvTitle = view.findViewById(R.id.tvTitle);
+        btnNext = view.findViewById(R.id.btnNext);
+        ivBack = view.findViewById(R.id.ivBack);
 
         tvUpload.setText(uploadMsg);
         tvTitle.setText(title);
 
         tvUpload.setOnClickListener(this);
-
-
+        btnNext.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
 
         imageIntentListener = new ImageUtils.ImageIntentListener() {
             @Override
             public void onCameraIntent(Intent intent, int requestCode) {
                 startActivityForResult(intent, requestCode);
-
             }
 
             @Override
@@ -82,6 +86,9 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
         };
         imageUtils = new ImageUtils(imageIntentListener);
 
+
+        if (! selectedImagePath.equals(""))
+            ivPhoto.setImageURI(Uri.parse(selectedImagePath));
 
         return view;
     }
@@ -97,6 +104,13 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
                 } else {
                     requestForCameraAndStorage();
                 }
+                break;
+            case R.id.btnNext:
+//                getActivity().onBackPressed();
+                getActivity().getSupportFragmentManager().popBackStack();
+                break;
+            case R.id.ivBack:
+                getActivity().getSupportFragmentManager().popBackStack();
                 break;
         }
     }
@@ -247,7 +261,6 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
             case SignupFragment.FROM_DRIVE_BUS_INSURANCE:
                 SignupFragment.driveBusInsurancePath = selectedImagePath;
                 break;
-
 
         }
     }
