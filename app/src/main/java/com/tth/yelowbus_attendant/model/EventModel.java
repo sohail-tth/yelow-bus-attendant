@@ -7,7 +7,6 @@ public class EventModel {
     String date;
     String time;
 
-
     public int getId() {
         return id;
     }

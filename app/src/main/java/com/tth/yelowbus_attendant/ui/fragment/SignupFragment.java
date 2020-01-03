@@ -65,6 +65,7 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
     public static final String FROM_FLEET_ATTENDANTS_AADHAAR = "fleet_attendants_aadhaar";
     public static final String FROM_FLEET_ATTENDANTS_PHOTO = "fleet_attendants_photo";
     public static final String FROM_FLEET_BUS_PHOTO = "fleet_bus_photo";
+
     public static final String FROM_LEASE_DRIVERS_AADHAAR = "lease_driver_aadhaar";
     public static final String FROM_LEASE_DRIVER_PHOTO = "lease_driver_photo";
     public static final String FROM_LEASE_LICENSE_PHOTO = "lease_license_photo";
@@ -386,8 +387,11 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
 
     }
     public void gotoHome(){
-        startActivity(new Intent(getActivity(), HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-        getActivity().finish();
+
+        setFragment((AppCompatActivity)getActivity(), new RouteDetailsSelectionFragment(),R.id.signupContainer,RouteDetailsSelectionFragment.class.getSimpleName(),false);
+
+//        startActivity(new Intent(getActivity(), HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//        getActivity().finish();
 
     }
 }

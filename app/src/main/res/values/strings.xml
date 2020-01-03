@@ -115,5 +115,13 @@
     <string name="bus_rc_photo">Bus Rc Photo</string>
     <string name="bus_permit_photo">Bus Permit</string>
     <string name="bus_insurance_photo">Bus Insurance</string>
+    <string name="define_your_daily_route">Define Your Daily Route</string>
+    <string name="pickup_route">Pickup Route</string>
+    <string name="drop_route">Drop Route</string>
+    <string name="select_route">Select Route</string>
+    <string name="stoppages">Stoppages</string>
+    <string name="start_time">Start Time</string>
+    <string name="select_pickup_route">Select Pickup Route</string>
+    <string name="select_drop_route">Select Drop Route</string>
 
 </resources>

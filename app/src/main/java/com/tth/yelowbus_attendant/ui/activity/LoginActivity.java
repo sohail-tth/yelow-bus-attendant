@@ -22,11 +22,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         btnSignUp = findViewById(R.id.btnSignUp);
         btnLogin = findViewById(R.id.btnLogin);
 
-
-
         btnSignUp.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
-
 
     }
 
@@ -35,13 +32,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()){
             case R.id.btnSignUp:
                 startActivity(new Intent(LoginActivity.this, SignupActivity.class));
-            break;
+                break;
             case R.id.btnLogin:
                 startActivity(new Intent(LoginActivity.this, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
                 finish();
                 break;
-
-
         }
     }
 

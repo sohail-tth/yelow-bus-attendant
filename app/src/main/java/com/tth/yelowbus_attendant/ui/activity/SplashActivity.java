@@ -159,7 +159,6 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
                 showOTPSignup();
             }
         });
-
     }
 
     public void showOTPSignup() {
@@ -180,7 +179,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
                Preference preference = Preference.getInstance(getApplicationContext());
                preference.setUserProfileType(userProfileType);
 
-               startActivity(new Intent(SplashActivity.this, SignupActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                startActivity(new Intent(SplashActivity.this, SignupActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 finish();
             }
         });

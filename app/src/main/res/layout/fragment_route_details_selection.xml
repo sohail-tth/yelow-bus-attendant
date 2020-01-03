@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.RouteDetailsSelectionFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/define_your_daily_route"
+        android:textColor="#454F63"
+        android:textSize="@dimen/_20sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@id/title"
+        android:background="@color/grey" />
+
+    <LinearLayout
+        android:id="@+id/layoutTabs"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/title"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/tabPickup"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gibson"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:singleLine="true"
+                android:text="@string/pickup_route"
+                android:textColor="#959DAD"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/pickupIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_alignParentBottom="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_indicator_notif" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:id="@+id/tabDrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gibson"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:singleLine="true"
+                android:text="@string/drop_route"
+                android:textColor="#959DAD"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/dropIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_alignParentBottom="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_indicator_notif"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@id/layoutTabs"
+        android:background="@color/grey" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTabs">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--    PICKUP-->
+            <LinearLayout
+                android:id="@+id/layoutPickup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_below="@id/layoutTabs">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectPickupRoute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_pickup_route"
+                    android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_16sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectedPickupRoute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="No route selected"
+                    android:textColor="#959DAD"
+                    android:textSize="@dimen/_16sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stoppages"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_16sdp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerPickupStoppages"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/start_time"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_16sdp"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPickupStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_corner_transparent_grey_border"
+                        android:padding="@dimen/_6sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvPickupConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_yellow_filled"
+                    android:layout_gravity="right"
+                    android:text="@string/confirm"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_12sdp"/>
+            </LinearLayout>
+
+
+            <!--    DROP-->
+            <LinearLayout
+                android:id="@+id/layoutDrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:layout_below="@id/layoutTabs">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectDropRoute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_drop_route"
+                    android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_16sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="No route selected"
+                    android:textColor="#959DAD"
+                    android:textSize="@dimen/_16sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stoppages"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textColor="#454F63"
+                    android:textSize="@dimen/_16sdp"/>
+
+                <!--        HORIZONTAL-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerDropStoppages"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/start_time"
+                        android:textColor="#454F63"
+                        android:textSize="@dimen/_16sdp"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDropStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_corner_transparent_grey_border"
+                        android:padding="@dimen/_6sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDropConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_yellow_filled"
+                    android:layout_gravity="right"
+                    android:text="@string/confirm"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_12sdp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
