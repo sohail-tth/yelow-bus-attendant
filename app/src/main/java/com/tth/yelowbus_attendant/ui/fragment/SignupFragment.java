@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,10 +14,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
+import com.google.gson.JsonObject;
 import com.tth.yelowbus_attendant.R;
+import com.tth.yelowbus_attendant.api.APICaller;
+import com.tth.yelowbus_attendant.api.APIClient;
+import com.tth.yelowbus_attendant.api.APIInterface;
 import com.tth.yelowbus_attendant.ui.activity.HomeActivity;
 import com.tth.yelowbus_attendant.util.Constants;
 import com.tth.yelowbus_attendant.util.Preference;
+
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class SignupFragment extends BaseFragment implements View.OnClickListener {
 
@@ -27,7 +36,8 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
     private ImageView fleetIndicator, busDriverIndicator, busDriverAndAttendantIndicator,busBusIndicator;
     private View layout_fleet_owners_info, layout_bus_and_driver_info, layout_driver_attendants_info, layoutBusInfo, layoutTerms;
     private AppCompatCheckBox cbTermsCond;
-
+    private EditText edtDriversEmail, edtDriversName, edtDriversMobileNo, edtDriversLicenseNo,  edtAttendantsName, edtAttendantsMobileNo, edtPassword, edtConfPassword, edtBankAccount;
+    private EditText edtDriveBusNo, edtDriveNoOfSets,edtDriveSchoolZoneRange;
 
 /* *********************   fleet photos textview *****************************************************/
     private TextView tvFleetOwnersCancelledCheque, tvFleetOwnersAadharPhoto, tvFleetOwnersPhoto, tvFleetDriversAadhaarPhoto,
@@ -108,7 +118,6 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
         next = view.findViewById(R.id.next);
 
 
-
         tvFleetOwnersCancelledCheque = view.findViewById(R.id.tvFleetOwnersCancelledCheque);
         tvFleetOwnersAadharPhoto = view.findViewById(R.id.tvFleetOwnersAadharPhoto);
         tvFleetOwnersPhoto = view.findViewById(R.id.tvFleetOwnersPhoto);
@@ -118,18 +127,16 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
         tvFleetAttendantsAadhaarPhoto = view.findViewById(R.id.tvFleetAttendantsAadhaarPhoto);
         tvFleetAttendantsPhoto = view.findViewById(R.id.tvFleetAttendantsPhoto);
         tvFleetBusPhoto = view.findViewById(R.id.tvFleetBusPhoto);
-        tvLeaseDriversAadhaarPhoto = view.findViewById(R.id.tvLeaseDriversAadhaarPhoto);
-        tvLeaseDriverPhoto = view.findViewById(R.id.tvLeaseDriverPhoto);
-        tvLeaseLicensePhoto = view.findViewById(R.id.tvLeaseLicensePhoto);
-        tvLeaseAttendantsAadhaarPhoto = view.findViewById(R.id.tvLeaseAttendantsAadhaarPhoto);
-        tvLeaseAttendantsPhoto = view.findViewById(R.id.tvLeaseAttendantsPhoto);
-        tvLeaseOwnersCancelledCheque = view.findViewById(R.id.tvLeaseOwnersCancelledCheque);
+        tvLeaseDriversAadhaarPhoto = view.findViewById(R.id.tvDriversAadhaarPhoto);
+        tvLeaseDriverPhoto = view.findViewById(R.id.tvDriverPhoto);
+        tvLeaseLicensePhoto = view.findViewById(R.id.tvLicensePhoto);
+        tvLeaseAttendantsAadhaarPhoto = view.findViewById(R.id.tvAttendantsAadhaarPhoto);
+        tvLeaseAttendantsPhoto = view.findViewById(R.id.tvAttendantsPhoto);
+        tvLeaseOwnersCancelledCheque = view.findViewById(R.id.tvOwnersCancelledCheque);
         tvDriveBusPhoto = view.findViewById(R.id.tvDriveBusPhoto);
         tvDriveBusRcPhoto = view.findViewById(R.id.tvDriveBusRcPhoto);
         tvDriveBusPermitPhoto = view.findViewById(R.id.tvDriveBusPermitPhoto);
         tvDriveBusinsurancePhoto = view.findViewById(R.id.tvDriveBusinsurancePhoto);
-
-
 
 
 
@@ -138,8 +145,6 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
         layout_driver_attendants_info.setVisibility(View.GONE);
         layoutBusInfo.setVisibility(View.GONE);
         layoutTerms.setVisibility(View.GONE);
-
-
 
         tabFleetOwner.setOnClickListener(this);
         tabBusDriver.setOnClickListener(this);
@@ -168,9 +173,7 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
         tvDriveBusPermitPhoto.setOnClickListener(this);
         tvDriveBusinsurancePhoto.setOnClickListener(this);
 
-
         showProfileTypeFields();
-
 
         return view;
 
@@ -201,9 +204,7 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
             tabBus.setVisibility(View.VISIBLE);
             tabDriverAndAttendant.performClick();
         }
-
     }
-
 
     @Override
     public void onClick(View v) {
@@ -281,8 +282,9 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
                 else{
                     if (layout_driver_attendants_info.getVisibility() == View.VISIBLE)
                         tabBus.performClick();
-                    else
-                        gotoHome();
+                    else{
+                        addDriveWithYelow();
+                    }
 
                 }
                 break;
@@ -324,42 +326,42 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
                 setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(fleetBusPhotoPath,"Bus Photo","Upload Bus Photo",FROM_FLEET_BUS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 break;
 
-            case R.id.tvLeaseDriversAadhaarPhoto:
+            case R.id.tvDriversAadhaarPhoto:
                 if (profileType.equals(Constants.LEASE_VEHICLE))
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseDriversAadhaarPath,"Driver's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_LEASE_DRIVERS_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 else
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveDriversAadhaarPath,"Driver's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_DRIVE_DRIVERS_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 break;
 
-            case R.id.tvLeaseDriverPhoto:
+            case R.id.tvDriverPhoto:
                 if (profileType.equals(Constants.LEASE_VEHICLE))
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseDriverPhotoPath,"Driver's Photo","Upload Driver's Photo",FROM_LEASE_DRIVER_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 else
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveDriverPhotoPath,"Driver's Photo","Upload Driver's Photo",FROM_DRIVE_DRIVER_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 break;
 
-            case R.id.tvLeaseLicensePhoto:
+            case R.id.tvLicensePhoto:
                 if (profileType.equals(Constants.LEASE_VEHICLE))
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseLicensePath,"License Photo","Upload License's Photo",FROM_LEASE_LICENSE_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 else
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveLicensePath,"License Photo","Upload License's Photo",FROM_DRIVE_LICENSE_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 break;
 
-            case R.id.tvLeaseAttendantsAadhaarPhoto:
+            case R.id.tvAttendantsAadhaarPhoto:
                 if (profileType.equals(Constants.LEASE_VEHICLE))
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseAttendantsAadhaarPath,"Attendant's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_LEASE_ATTENDANT_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 else
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveAttendantsAadhaarPath,"Attendant's Aadhaar Card Photo","Upload Aadhaar Card Photo",FROM_DRIVE_ATTENDANT_AADHAAR),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 break;
 
-            case R.id.tvLeaseAttendantsPhoto:
+            case R.id.tvAttendantsPhoto:
                 if (profileType.equals(Constants.LEASE_VEHICLE))
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseAttendantsPhotoPath,"Attendant's Photo","Upload Attendant's Photo",FROM_LEASE_ATTENDANTS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 else
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(driveAttendantsPhotoPath,"Attendant's Photo","Upload Attendant's Photo",FROM_LEASE_ATTENDANTS_PHOTO),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 break;
 
-            case R.id.tvLeaseOwnersCancelledCheque:
+            case R.id.tvOwnersCancelledCheque:
                 if (profileType.equals(Constants.LEASE_VEHICLE))
                     setFragment((AppCompatActivity)getActivity(),new PhotoUploadFragment(leaseCancelledChequePath,"Cancelled Cheque","Upload Cancelled Cheque",FROM_LEASE_CANCELLED_CHEQUE),R.id.signupContainer,PhotoUploadFragment.class.getSimpleName(),true);
                 else
@@ -393,5 +395,66 @@ public class SignupFragment extends BaseFragment implements View.OnClickListener
 //        startActivity(new Intent(getActivity(), HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
 //        getActivity().finish();
 
+    }
+
+    public void addDriveWithYelow(){
+        JsonObject request = new JsonObject();
+//        request.addProperty("emailID",edtDriversEmail.getText().toString());
+//        request.addProperty("driverName",edtDriversName.getText().toString());
+//        request.addProperty("driverMobileNumber",edtDriversMobileNo.getText().toString());
+//        request.addProperty("driverAadharCardPhoto",);
+//        request.addProperty("driverPhoto",);
+//        request.addProperty("licenseNumber",edtDriversLicenseNo.getText().toString());
+//        request.addProperty("licensePhoto",);
+//        request.addProperty("attendantName",edtAttendantsName.getText().toString());
+//        request.addProperty("attendantMobileNumber",edtAttendantsMobileNo.getText().toString());
+//        request.addProperty("attendantAadharCardPhoto",);
+//        request.addProperty("attendantPhoto",);
+//        request.addProperty("schoolID",);
+//        request.addProperty("password",edtPassword.getText().toString());
+//        request.addProperty("bankAccountDetails",edtBankAccount.getText().toString());
+//        request.addProperty("cancel_cheque_photo",);
+//
+//        request.addProperty("busNumber",edtDriveBusNo.getText().toString());
+//        request.addProperty("busPhoto",);
+//        request.addProperty("noOfSeats", edtDriveNoOfSets.getText().toString());
+//        request.addProperty("chassisNumber", "");
+//        request.addProperty("busRCBookPhoto",);
+//        request.addProperty("busPermitPhoto",);
+//        request.addProperty("busInsurancePhoto",);
+
+        Retrofit retrofit = APIClient.getRetrofit();
+        APIInterface apiInterface = retrofit.create(APIInterface.class);
+        Call<JsonObject> call = apiInterface.addDriveWithYelow(request);
+        APICaller apiCaller = new APICaller();
+        apiCaller.setApiListener(new APICaller.APIListener() {
+            @Override
+            public void onSuccess(JsonObject jsonObject) {
+                if (jsonObject.get("statusCode").getAsInt() == 200){
+                    snackBar(next, "Registered successfully");
+                    gotoHome();
+                }
+                else {
+                    snackBar(next, jsonObject.get("message").getAsString());
+                }
+            }
+
+            @Override
+            public void onError(Response<JsonObject> response) {
+                snackBar(next, response.message());
+            }
+
+            @Override
+            public void onException(Throwable t) {
+                t.printStackTrace();
+                snackBar(next, t.getMessage());
+            }
+
+            @Override
+            public void noInternetConnection() {
+                snackBar(next, getResources().getString(R.string.network_not_connected));
+            }
+        });
+        apiCaller.callAPI(getContext(), call, "Saving your details");
     }
 }

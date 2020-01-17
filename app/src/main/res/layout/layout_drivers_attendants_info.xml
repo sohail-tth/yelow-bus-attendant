@@ -12,7 +12,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtLeaseDriversEmail"
+            android:id="@+id/edtDriversEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -33,7 +33,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtLeaseDriversName"
+            android:id="@+id/edtDriversName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -54,7 +54,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtLeaseDriversMobileNo"
+            android:id="@+id/edtDriversMobileNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <TextView
-            android:id="@+id/tvLeaseDriversAadhaarPhoto"
+            android:id="@+id/tvDriversAadhaarPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <TextView
-            android:id="@+id/tvLeaseDriverPhoto"
+            android:id="@+id/tvDriverPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <EditText
-            android:id="@+id/edtFleetDriversLicenseNo"
+            android:id="@+id/edtDriversLicenseNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -135,7 +135,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <TextView
-            android:id="@+id/tvLeaseLicensePhoto"
+            android:id="@+id/tvLicensePhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -154,7 +154,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <EditText
-            android:id="@+id/edtFleetAttendantsName"
+            android:id="@+id/edtAttendantsName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -176,7 +176,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtFleetAttendantsMobileNo"
+            android:id="@+id/edtAttendantsMobileNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -198,7 +198,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <TextView
-            android:id="@+id/tvLeaseAttendantsAadhaarPhoto"
+            android:id="@+id/tvAttendantsAadhaarPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -217,7 +217,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <TextView
-            android:id="@+id/tvLeaseAttendantsPhoto"
+            android:id="@+id/tvAttendantsPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -237,7 +237,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtLeasePassword"
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -258,7 +258,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtLeaseConfPassword"
+            android:id="@+id/edtConfPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -279,7 +279,7 @@
         android:background="@drawable/shadow_all">
 
         <EditText
-            android:id="@+id/edtLeaseBankAccount"
+            android:id="@+id/edtBankAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -299,7 +299,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <TextView
-            android:id="@+id/tvLeaseOwnersCancelledCheque"
+            android:id="@+id/tvOwnersCancelledCheque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"
@@ -318,7 +318,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shadow_all">
         <EditText
-            android:id="@+id/edtFleetSchoolZoneRange"
+            android:id="@+id/edtSchoolZoneRange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_greydark_border"

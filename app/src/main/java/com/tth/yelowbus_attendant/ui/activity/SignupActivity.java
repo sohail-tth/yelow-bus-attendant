@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.tth.yelowbus_attendant.R;
 import com.tth.yelowbus_attendant.ui.fragment.SignupFragment;
+import com.tth.yelowbus_attendant.ui.fragment.signUpFragments.SignUp_DriveWithYelow;
 import com.tth.yelowbus_attendant.util.Constants;
 import com.tth.yelowbus_attendant.util.Preference;
 
@@ -22,7 +23,8 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_container);
 
-        setFragment(new SignupFragment(),R.id.signupContainer,SignupFragment.class.getSimpleName(),false);
+        if (Preference.getInstance(getApplicationContext()).getUserProfileType().equals(Constants.DRIVE_WITH_YELOW))
+            setFragment(new SignUp_DriveWithYelow(),R.id.signupContainer,SignUp_DriveWithYelow.class.getSimpleName(),false);
 
 
     }

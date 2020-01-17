@@ -17,8 +17,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.JsonObject;
 import com.tth.yelowbus_attendant.R;
+import com.tth.yelowbus_attendant.api.APICaller;
+import com.tth.yelowbus_attendant.api.APIClient;
+import com.tth.yelowbus_attendant.api.APIInterface;
+import com.tth.yelowbus_attendant.ui.fragment.signUpFragments.SignUp_DriveWithYelow;
 import com.tth.yelowbus_attendant.util.ImageUtils;
+import com.tth.yelowbus_attendant.util.Util;
+
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 
 public class PhotoUploadFragment extends BaseFragment implements View.OnClickListener {
@@ -218,51 +228,204 @@ public class PhotoUploadFragment extends BaseFragment implements View.OnClickLis
 
 
 
-            case SignupFragment.FROM_DRIVE_DRIVERS_AADHAAR:
-                SignupFragment.driveDriversAadhaarPath = selectedImagePath;
+//            case SignupFragment.FROM_DRIVE_DRIVERS_AADHAAR:
+//                SignupFragment.driveDriversAadhaarPath = selectedImagePath;
+//                break;
+//            case SignupFragment.FROM_DRIVE_DRIVER_PHOTO:
+//                SignupFragment.driveDriverPhotoPath = selectedImagePath;
+//                break;
+//            case SignupFragment.FROM_DRIVE_LICENSE_PHOTO:
+//                SignupFragment.driveLicensePath = selectedImagePath;
+//                break;
+//
+//            case SignupFragment.FROM_DRIVE_ATTENDANT_AADHAAR:
+//                SignupFragment.driveAttendantsAadhaarPath = selectedImagePath;
+//                break;
+//
+//            case SignupFragment.FROM_DRIVE_ATTENDANTS_PHOTO:
+//                SignupFragment.driveAttendantsPhotoPath = selectedImagePath;
+//                break;
+//
+//
+//
+//
+//
+//
+//            case SignupFragment.FROM_DRIVE_CANCELLED_CHEQUE:
+//                SignupFragment.driveCancelledCheque = selectedImagePath;
+//                break;
+//            case SignupFragment.FROM_DRIVE_BUS_PHOTO:
+//                SignupFragment.driveBusPhotoPath = selectedImagePath;
+//                break;
+//            case SignupFragment.FROM_DRIVE_BUS_RC:
+//                SignupFragment.driveBusRcPath = selectedImagePath;
+//                break;
+//
+//            case SignupFragment.FROM_DRIVE_BUS_PERMIT:
+//                SignupFragment.driveBusPermitPath = selectedImagePath;
+//                break;
+//
+//            case SignupFragment.FROM_DRIVE_BUS_INSURANCE:
+//                SignupFragment.driveBusInsurancePath = selectedImagePath;
+//                break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            case SignUp_DriveWithYelow.FROM_DRIVE_DRIVERS_AADHAAR:
+                SignUp_DriveWithYelow.driveDriversAadhaarPath = selectedImagePath;
+                uploadFile("DriverAadharPhoto", selectedImagePath);
                 break;
-            case SignupFragment.FROM_DRIVE_DRIVER_PHOTO:
-                SignupFragment.driveDriverPhotoPath = selectedImagePath;
-                break;
-            case SignupFragment.FROM_DRIVE_LICENSE_PHOTO:
-                SignupFragment.driveLicensePath = selectedImagePath;
-                break;
 
-            case SignupFragment.FROM_DRIVE_ATTENDANT_AADHAAR:
-                SignupFragment.driveAttendantsAadhaarPath = selectedImagePath;
+            case SignUp_DriveWithYelow.FROM_DRIVE_DRIVER_PHOTO:
+                SignUp_DriveWithYelow.driveDriverPhotoPath = selectedImagePath;
+                uploadFile("DriverPhoto", selectedImagePath);
                 break;
-
-            case SignupFragment.FROM_DRIVE_ATTENDANTS_PHOTO:
-                SignupFragment.driveAttendantsPhotoPath = selectedImagePath;
+            case SignUp_DriveWithYelow.FROM_DRIVE_LICENSE_PHOTO:
+                SignUp_DriveWithYelow.driveLicensePath = selectedImagePath;
+                uploadFile("LicensePhoto", selectedImagePath);
                 break;
 
-
-
-
-
-
-
-
-
-            case SignupFragment.FROM_DRIVE_CANCELLED_CHEQUE:
-                SignupFragment.driveCancelledCheque = selectedImagePath;
-                break;
-            case SignupFragment.FROM_DRIVE_BUS_PHOTO:
-                SignupFragment.driveBusPhotoPath = selectedImagePath;
-                break;
-            case SignupFragment.FROM_DRIVE_BUS_RC:
-                SignupFragment.driveBusRcPath = selectedImagePath;
+            case SignUp_DriveWithYelow.FROM_DRIVE_ATTENDANT_AADHAAR:
+                SignUp_DriveWithYelow.driveAttendantsAadhaarPath = selectedImagePath;
+                uploadFile("AttendantAadharPhoto", selectedImagePath);
                 break;
 
-            case SignupFragment.FROM_DRIVE_BUS_PERMIT:
-                SignupFragment.driveBusPermitPath = selectedImagePath;
+            case SignUp_DriveWithYelow.FROM_DRIVE_ATTENDANTS_PHOTO:
+                SignUp_DriveWithYelow.driveAttendantsPhotoPath = selectedImagePath;
+                uploadFile("AttendantPhoto", selectedImagePath);
                 break;
 
-            case SignupFragment.FROM_DRIVE_BUS_INSURANCE:
-                SignupFragment.driveBusInsurancePath = selectedImagePath;
+
+
+
+
+
+            case SignUp_DriveWithYelow.FROM_DRIVE_CANCELLED_CHEQUE:
+                SignUp_DriveWithYelow.driveCancelledChequePath = selectedImagePath;
+                uploadFile("AttendantChequePhoto", selectedImagePath);
+                break;
+
+            case SignUp_DriveWithYelow.FROM_DRIVE_BUS_PHOTO:
+                SignUp_DriveWithYelow.driveBusPhotoPath = selectedImagePath;
+                uploadFile("BusPhoto", selectedImagePath);
+                break;
+
+            case SignUp_DriveWithYelow.FROM_DRIVE_BUS_RC:
+                SignUp_DriveWithYelow.driveBusRcPath = selectedImagePath;
+                uploadFile("BusRcPhoto", selectedImagePath);
+                break;
+
+            case SignUp_DriveWithYelow.FROM_DRIVE_BUS_PERMIT:
+                SignUp_DriveWithYelow.driveBusPermitPath = selectedImagePath;
+                uploadFile("BusPermitPhoto", selectedImagePath);
+                break;
+
+            case SignUp_DriveWithYelow.FROM_DRIVE_BUS_INSURANCE:
+                SignUp_DriveWithYelow.driveBusInsurancePath = selectedImagePath;
+                uploadFile("BusInsurancePhoto", selectedImagePath);
                 break;
 
         }
+    }
+
+    public void uploadFile(final String fileKey, String filePath){
+
+        JsonObject request = new JsonObject();
+        request.addProperty("imageKey",fileKey);
+        request.addProperty("base64Image", Util.imageToBase64(filePath));
+        request.addProperty("extension", Util.getExtension(filePath));
+
+        Retrofit retrofit = APIClient.getRetrofit();
+        APIInterface apiInterface = retrofit.create(APIInterface.class);
+        APICaller apiCaller = new APICaller();
+        Call<JsonObject> call = apiInterface.uploadFile(request);
+
+        apiCaller.setApiListener(new APICaller.APIListener() {
+            @Override
+            public void onSuccess(JsonObject jsonObject) {
+                if (jsonObject.get("statusCode").getAsInt() == 200){
+                    if (!jsonObject.get("path").getAsString().equals("")){
+                        snackBar(tvUpload, "Photo uploaded successfully");
+                        switch (fileKey){
+                            case "DriverAadharPhoto":
+                                SignUp_DriveWithYelow.driverAadharPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "DriverPhoto":
+                                SignUp_DriveWithYelow.driverPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "LicensePhoto":
+                                SignUp_DriveWithYelow.licensePhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "AttendantAadharPhoto":
+                                SignUp_DriveWithYelow.attendantAadharPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "AttendantPhoto":
+                                SignUp_DriveWithYelow.attendantPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "AttendantChequePhoto":
+                                SignUp_DriveWithYelow.cancelChequePhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "BusPhoto":
+                                SignUp_DriveWithYelow.busPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "BusRcPhoto":
+                                SignUp_DriveWithYelow.busRcPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "BusPermitPhoto":
+                                SignUp_DriveWithYelow.busPermitPhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                            case "BusInsurancePhoto":
+                                SignUp_DriveWithYelow.busInsurancePhotoServerUrl = jsonObject.get("path").getAsString();
+                                break;
+                        }
+                    }
+                    else {
+                        snackBar(tvUpload, "Failed! Something went wrong");
+                    }
+                }
+                else{
+                    snackBar(tvUpload, jsonObject.get("message").getAsString()+" - "+ jsonObject.get("statusCode").getAsInt());
+                }
+            }
+
+            @Override
+            public void onError(Response<JsonObject> response) {
+                snackBar(tvUpload, response.message());
+            }
+
+            @Override
+            public void onException(Throwable t) {
+                t.printStackTrace();
+                snackBar(btnNext, t.getMessage());
+            }
+
+            @Override
+            public void noInternetConnection() {
+                snackBar(tvUpload, getResources().getString(R.string.network_not_connected));
+            }
+        });
+        apiCaller.callAPI(getContext(), call,"Uploading");
+
     }
 
 }

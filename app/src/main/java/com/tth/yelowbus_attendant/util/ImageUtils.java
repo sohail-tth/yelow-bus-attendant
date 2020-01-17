@@ -62,7 +62,6 @@ public class ImageUtils {
                         imageIntentListener.onGalleryIntent(Intent.createChooser(intent, "Select Photo"), IMAGE_PICK);
                         break;
                 }
-
             }
         });
 

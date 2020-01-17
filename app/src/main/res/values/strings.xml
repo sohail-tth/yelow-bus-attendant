@@ -123,5 +123,6 @@
     <string name="start_time">Start Time</string>
     <string name="select_pickup_route">Select Pickup Route</string>
     <string name="select_drop_route">Select Drop Route</string>
+    <string name="network_not_connected">Network not connected</string>
 
 </resources>
