@@ -32,7 +32,9 @@ import com.tth.yelowbus_attendant.api.APIInterface;
 import com.tth.yelowbus_attendant.model.SchoolModel;
 import com.tth.yelowbus_attendant.ui.fragment.BaseFragment;
 import com.tth.yelowbus_attendant.ui.fragment.PhotoUploadFragment;
+import com.tth.yelowbus_attendant.ui.fragment.RouteDetailsSelectionFragment;
 import com.tth.yelowbus_attendant.util.Constants;
+import com.tth.yelowbus_attendant.util.Preference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -433,7 +435,8 @@ public class SignUp_DriveWithYelow extends BaseFragment implements View.OnClickL
             public void onSuccess(JsonObject jsonObject) {
                 if (jsonObject.get("statusCode").getAsInt() == 200){
                     snackBar(next, "Registered successfully");
-//                    gotoHome();
+                    Preference.getInstance(getContext()).setREGISTERED(true);
+                    setFragment((AppCompatActivity)getActivity(), new RouteDetailsSelectionFragment(),R.id.signupContainer,RouteDetailsSelectionFragment.class.getSimpleName(),false);
                 }
                 else {
                     snackBar(next, jsonObject.get("message").getAsString());

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:scaleType="center"
+        android:src="@drawable/yelow_bus"
+        android:alpha="0.1"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/buildings"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.4"/>
+
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tvMsg" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_yellow_filled"
+        android:fontFamily="@font/gibson"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_20sdp"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/msg_acc_under_verifi"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_23sdp" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvMsg" />
+
+</RelativeLayout>

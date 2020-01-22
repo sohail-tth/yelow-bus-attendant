@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="1">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:scaleType="center"
+        android:src="@drawable/yelow_bus"
+        android:alpha="0.1"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/buildings"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.4"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_yellow_filled"
+        android:layout_margin="@dimen/_20sdp"
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_20sdp"
+            android:text="@string/email_verification_msg"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>
