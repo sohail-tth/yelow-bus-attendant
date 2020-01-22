@@ -51,7 +51,7 @@
             <ImageView
                 android:id="@+id/pickupIndicator"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_10sdp"
+                android:layout_height="@dimen/_6sdp"
                 android:layout_alignParentBottom="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/tab_indicator_notif" />
@@ -85,7 +85,7 @@
             <ImageView
                 android:id="@+id/dropIndicator"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_10sdp"
+                android:layout_height="@dimen/_6sdp"
                 android:layout_alignParentBottom="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/tab_indicator_notif"
@@ -212,6 +212,7 @@
                     android:textSize="@dimen/_16sdp"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectedDropRoute"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="2"
